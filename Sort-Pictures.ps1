@@ -5,7 +5,7 @@ $videos = New-Object System.Collections.ArrayList
 $years = New-Object System.Collections.ArrayList
 
 
-$all = Get-ChildItem -Path $PathFrom -Recurse | Sort-Object -Property LastWriteTime.Year
+$all = Get-ChildItem -Path $PathFrom -Recurse -File | Sort-Object -Property LastWriteTime.Year
 
 $all | ForEach-Object { 
     [void]$years.Add($_.LastWriteTime.Year)
